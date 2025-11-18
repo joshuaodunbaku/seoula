@@ -1,9 +1,6 @@
-// src/pages/AboutPremiumEnhanced.jsx
-import React from "react";
 import { motion } from "framer-motion";
 import {
   FaQuoteLeft,
-  FaCalendarAlt,
   FaTrophy,
   FaMusic,
   FaFacebook,
@@ -13,8 +10,8 @@ import {
   FaHeadphonesAlt,
 } from "react-icons/fa";
 import IMAGES from "../assets/images";
+import { Wrapper } from "../Styles/About";
 
-// Dummy data
 const timeline = [
   {
     year: "2015",
@@ -51,51 +48,46 @@ const albums = [
 
 const galleryImages = [
   IMAGES.image1,
-  IMAGES.track_img1,
-  IMAGES.track_img1,
-  IMAGES.track_img1,
+  IMAGES.image4,
+  IMAGES.image6,
+  IMAGES.image5,
 ];
 
 const AboutPremiumEnhanced = () => {
   return (
-    <>
+    <Wrapper>
       {/* HERO */}
-      <section
-        className="position-relative text-white overflow-hidden"
-        style={{
-          minHeight: "90vh",
-          background: `url(${IMAGES.image1}) center/cover no-repeat`,
-        }}
-      >
-        <div className="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
-        <div className="container text-center position-relative py-5">
+      <section className="hero-wrapper position-relative text-white overflow-hidden">
+        {/* Overlay */}
+        <div className="hero-overlay"></div>
+
+        {/* Content */}
+        <div className="container position-relative py-5 hero-content">
           <motion.h1
-            className="display-2 bricolage-grotesque fw-bold mb-3"
-            initial={{ opacity: 0, y: -50 }}
+            className="display-3 display-md-2 bricolage-grotesque fw-bold mb-3 text-center text-lg-start"
+            initial={{ opacity: 0, y: -40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
             SE'OULA
           </motion.h1>
+
           <motion.p
-            className="lead mulish mb-4"
+            className="lead mulish mb-4 text-center text-lg-start"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
           >
             Jazz Visionary • Composer • Soul Architect
           </motion.p>
+
           <motion.div
-            className="d-inline-block px-5 py-3 rounded-pill"
-            style={{
-              background: "rgba(255,255,255,0.15)",
-              backdropFilter: "blur(10px)",
-            }}
+            className="quote-box d-inline-block px-4 py-3 rounded-pill mx-auto mx-lg-0"
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 0.5 }}
           >
-            <FaQuoteLeft className="me-3" />
+            <FaQuoteLeft className="me-2" />
             <em>Where tradition meets fearless innovation</em>
           </motion.div>
         </div>
@@ -242,7 +234,7 @@ const AboutPremiumEnhanced = () => {
                 <img
                   src={img}
                   alt={`Gallery ${i}`}
-                  className="img-fluid rounded-4 shadow-sm"
+                  className="img-fluid rounded-4 shadow-sm gallery-image"
                 />
               </motion.div>
             ))}
@@ -250,20 +242,22 @@ const AboutPremiumEnhanced = () => {
         </div>
       </section>
 
-      {/* FAN TESTIMONIAL */}
+      {/*  */}
       <section
         className="py-5 text-white text-center"
         style={{ background: "#6366f1" }}
       >
         <FaQuoteLeft className="display-1 opacity-20 mb-4" />
-        <blockquote className="display-5 bricolage-grotesque fw-light">
-          "SE'OULA's music changed my life. Every note feels like a story from
-          the soul."
-        </blockquote>
+        <div className="container m-4 m-auto">
+          <blockquote className="display-5 container bricolage-grotesque fw-light">
+            "SE'OULA's music changed my life. Every note feels like a story from
+            the soul."
+          </blockquote>
+        </div>
         <p className="fs-4 mulish opacity-90 mt-3">— Jazz Enthusiast</p>
       </section>
 
-      {/* NEWSLETTER / CTA */}
+      {/* */}
       <section className="py-5 bg-light text-center">
         <h3 className="bricolage-grotesque mb-4">Stay in the Loop</h3>
         <p className="mulish mb-4">
@@ -302,7 +296,7 @@ const AboutPremiumEnhanced = () => {
         </div>
         <p className="mulish text-muted">Join 50K+ souls worldwide</p>
       </section>
-    </>
+    </Wrapper>
   );
 };
 

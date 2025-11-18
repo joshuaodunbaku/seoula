@@ -1,23 +1,20 @@
-// src/GlobalStyles.js (edited for vibrant jazz theme)
 import { createGlobalStyle } from "styled-components";
-// Dummy IMAGES import - replace with real assets
 
 const GlobalStyle = createGlobalStyle`
   /* Google Fonts */
   @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Rubik+Doodle+Shadow&family=Rubik+Mono+One&family=Rubik:ital,wght@0,300..900;1,300..900&family=Space+Grotesk:wght@300..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
-  /* Root Variables - Vibrant Jazz Palette */
   :root {
-    --primary-color: #6366f1; /* Vibrant indigo */
-    --secondary-color: #f59e0b; /* Warm amber/gold */
-    --tertiary-color: #10b981; /* Emerald green accent */
-    --background-light: #fef3c7; /* Warm light bg */
-    --background-dark: #0f172a; /* Deep slate for contrast */
-    --text-color: #1e293b; /* Dark gray */
+    --primary-color: #6366f1; 
+    --secondary-color: #f59e0b; 
+    --tertiary-color: #10b981; 
+    --background-light: #fef3c7; 
+    --background-dark: #0f172a; 
+    --text-color: #1e293b; 
     --navbar-color: #ffffff;
-    --cta-color: #ef4444; /* Vibrant coral */
-    --footer-bg: #334155; /* Slate footer */
-    --hover-color: #059669; /* Emerald hover */
+    --cta-color: #ef4444; 
+    --footer-bg: #334155; 
+    --hover-color: #059669; 
     --bg-gradient: linear-gradient(180deg, #6366f1, #f59e0b);
     --white-color: #ffffff;
     --dark-color: #0f172a;

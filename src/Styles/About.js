@@ -1,13 +1,10 @@
 import styled from "styled-components";
-// Dummy IMAGES import - replace with real assets
 const IMAGES = {
   image1:
     "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80", // Jazz background
 };
 
 export const Wrapper = styled.div`
-  /* About Section */
-  /* Polished About Page Extras */
   .hover-scale {
     transition: transform 0.3s ease;
   }
@@ -15,7 +12,6 @@ export const Wrapper = styled.div`
     transform: scale(1.3) !important;
   }
 
-  /* Fix typo in class if needed */
   .brage-grotesque {
     font-family: "Bricolage Grotesque", sans-serif !important;
   }
@@ -99,5 +95,55 @@ export const Wrapper = styled.div`
   .about-text-info p {
     font-family: "Mulish", serif;
     font-size: 0.875rem;
+  }
+  .gallery-image {
+    width: 100%;
+    height: 220px; /* Adjust to desired uniform height */
+    object-fit: cover;
+    border-radius: 20px;
+  }
+
+  .hero-wrapper {
+    min-height: 90vh;
+    background: url(${IMAGES.image1}) center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 60px 0;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(2px);
+    z-index: 1;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 3;
+    max-width: 700px;
+  }
+
+  .quote-box {
+    background: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    font-size: 0.95rem;
+  }
+
+  /* Mobile fixes */
+  @media (max-width: 768px) {
+    .hero-wrapper {
+      text-align: center;
+      background-position: top;
+      padding: 80px 20px;
+    }
+
+    .quote-box {
+      font-size: 0.85rem;
+      padding: 10px 16px;
+    }
   }
 `;

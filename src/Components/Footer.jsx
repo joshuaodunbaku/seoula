@@ -1,12 +1,4 @@
-// src/components/Footer.jsx
-import React from "react";
-import {
-  FaFacebook,
-  FaInstagram,
-  FaSpotify,
-  FaYoutube,
-  FaHeart,
-} from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaSpotify, FaYoutube } from "react-icons/fa";
 import { Wrapper } from "../Styles/Footer";
 
 const Footer = () => {
@@ -53,10 +45,7 @@ const Footer = () => {
           </div>
           <hr />
           <div className="text-center">
-            <p>
-              &copy; 2025 SE'OULA. Made with{" "}
-              <FaHeart className="text-danger mx-1" /> & jazz.
-            </p>
+            <p>&copy; 2025 SE'OULA.</p>
           </div>
         </div>
       </footer>

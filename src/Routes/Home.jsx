@@ -1,4 +1,3 @@
-// src/pages/Home.jsx
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaPlay, FaArrowRight, FaMusic, FaHeadphones } from "react-icons/fa";
@@ -49,7 +48,6 @@ const Home = () => {
           overflow: "hidden",
         }}
       >
-        {/* Decorative Glow */}
         <div
           style={{
             position: "absolute",
@@ -65,7 +63,6 @@ const Home = () => {
 
         <div className="container py-5 position-relative" style={{ zIndex: 5 }}>
           <div className="row align-items-center justify-content-between">
-            {/* Text */}
             <div className="col-lg-6">
               <h1 className="display-2 fw-bold bricolage-grotesque mb-4">
                 Feel the

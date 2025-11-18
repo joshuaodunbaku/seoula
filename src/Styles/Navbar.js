@@ -1,30 +1,18 @@
-// styles/NavbarStyles.js
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  /* Smooth fade-in jazz vibe */
+  /* Navbar Always White */
   .navbar {
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    transition: background 0.4s ease, padding 0.3s ease;
-  }
-
-  /* When scrolled */
-  .navbar.scrolled {
-    background: rgba(255, 255, 255, 0.9) !important;
-    backdrop-filter: blur(14px);
-    padding-top: 0.4rem;
-    padding-bottom: 0.4rem;
-    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+    background: #ffffff !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+    transition: all 0.3s ease;
   }
 
   /* Brand Style */
   .navbar-brand {
     font-family: "Bricolage Grotesque", sans-serif;
-    font-size: 2rem;
-    letter-spacing: 1px;
     font-weight: 700;
+    letter-spacing: 1px;
     background: linear-gradient(
       90deg,
       var(--primary-color),
@@ -34,50 +22,53 @@ export const Wrapper = styled.div`
     -webkit-text-fill-color: transparent;
   }
 
-  /* NAV LINKS */
+  /* Links */
   .nav-link {
-    color: #222 !important;
+    color: #111 !important;
     font-weight: 500;
-    position: relative;
     padding: 8px 16px !important;
+    position: relative;
     transition: all 0.3s ease;
   }
 
-  /* Underline Hover (Jazz highlight) */
+  /* Underline hover */
   .nav-link::after {
     content: "";
     position: absolute;
-    bottom: 3px;
     left: 50%;
+    bottom: 4px;
     width: 0;
     height: 2px;
     background: var(--primary-color);
-    transition: all 0.3s ease;
     transform: translateX(-50%);
+    transition: width 0.3s ease;
   }
 
   .nav-link:hover::after {
     width: 60%;
   }
 
-  /* Hover Color */
   .nav-link:hover {
-    color: var(--white-color) !important;
-    background: rgba(128, 128, 128, 0.68);
+    color: var(--primary-color) !important;
+    background: rgba(99, 102, 241, 0.1);
     border-radius: 8px;
   }
 
   /* Active Link */
-  .nav-link.active {
-    background: var(--primary-color);
+  .active-link {
+    background: var(--primary-color) !important;
     color: white !important;
     border-radius: 8px;
   }
 
-  /* Mobile Toggle */
+  /* Remove underline when active */
+  .active-link::after {
+    width: 0 !important;
+  }
+
+  /* Mobile */
   .navbar-toggler {
     border: none !important;
-    padding: 6px 10px;
   }
 
   .navbar-toggler-icon {
