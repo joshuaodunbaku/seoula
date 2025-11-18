@@ -1,0 +1,34 @@
+/* src/App.css (minimal, as most styles in GlobalStyle) */
+body {
+  overflow-x: hidden;
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Vibrant Jazz Hover Effects */
+.card-jazz:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(99, 102, 241, 0.3);
+  transition: all 0.3s ease;
+}
+
+.hero-overlay {
+  background: linear-gradient(
+    135deg,
+    rgba(99, 102, 241, 0.8),
+    rgba(245, 158, 11, 0.6)
+  );
+}
