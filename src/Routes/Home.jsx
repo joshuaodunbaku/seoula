@@ -1,7 +1,7 @@
 // src/pages/Home.jsx
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaPlay, FaArrowRight } from "react-icons/fa";
+import { FaPlay, FaArrowRight, FaMusic, FaHeadphones } from "react-icons/fa";
 import TrackCard from "../components/TrackCard";
 import IMAGES from "../assets/images";
 
@@ -39,64 +39,78 @@ const featuredTracks = [
 const Home = () => {
   return (
     <>
-      {/* Hero Section */}
+      {/* HERO SECTION */}
       <section
-        className="hero-section d-flex align-items-center text-center text-white"
+        className="text-white d-flex align-items-center"
         style={{
           minHeight: "100vh",
-          background: "linear-gradient(135deg, #6366f1, #f59e0b)",
+          background: "linear-gradient(135deg, #1e1b4b, #312e81)",
           position: "relative",
+          overflow: "hidden",
         }}
       >
+        {/* Decorative Glow */}
         <div
-          className="container hero-content position-relative"
-          style={{ zIndex: 2 }}
-        >
-          <div className="row justify-content-center align-items-center g-4">
-            <div className="col-lg-6 text-lg-start fade-in">
-              <h1 className="display-2 bricolage-grotesque fw-bold mb-4">
-                SE'OULA
+          style={{
+            position: "absolute",
+            width: "500px",
+            height: "500px",
+            background: "rgba(99,102,241,0.35)",
+            filter: "blur(120px)",
+            borderRadius: "50%",
+            top: "-100px",
+            right: "-100px",
+          }}
+        />
+
+        <div className="container py-5 position-relative" style={{ zIndex: 5 }}>
+          <div className="row align-items-center justify-content-between">
+            {/* Text */}
+            <div className="col-lg-6">
+              <h1 className="display-2 fw-bold bricolage-grotesque mb-4">
+                Feel the
+                <br /> Jazz Revolution
               </h1>
-              <p className="lead fs-2 mulish mb-5">
-                Ignite your soul with vibrant jazz rhythms that dance through
-                the night.
+              <p className="lead fs-4 mulish mb-4 text-light">
+                Where classic jazz meets modern soul. Dive into timeless
+                melodies crafted to move your spirit.
               </p>
-              <Link to="/music" className="btn custom-btn btn-lg">
-                <FaPlay className="me-2" /> Dive into the Sound
+
+              <Link to="/music" className="btn custom-btn btn-lg px-4 py-3">
+                <FaPlay className="me-2" /> Start Listening
               </Link>
             </div>
-            <div className="col-lg-5 text-center">
-              <div className="rounded-4 overflow-hidden shadow-lg">
+
+            {/* Hero Image */}
+            <div className="col-lg-5 text-center mt-4 mt-lg-0">
+              <div
+                className="p-2 shadow-lg rounded-4"
+                style={{
+                  background: "rgba(255,255,255,0.1)",
+                  backdropFilter: "blur(10px)",
+                }}
+              >
                 <img
                   src={IMAGES.image1}
-                  alt="SE'OULA"
-                  className="img-fluid"
-                  style={{ borderRadius: "30px" }}
+                  alt="Hero"
+                  className="img-fluid rounded-4"
                 />
               </div>
             </div>
           </div>
         </div>
-
-        {/* Overlay Shapes */}
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            background:
-              "radial-gradient(circle at top left, rgba(255,255,255,0.1), transparent), radial-gradient(circle at bottom right, rgba(255,255,255,0.15), transparent)",
-            zIndex: 1,
-          }}
-        />
       </section>
 
-      {/* Featured Tracks */}
+      {/* FEATURED TRACKS */}
       <section className="py-5 bg-light">
         <div className="container">
           <div className="text-center mb-5">
-            <h2 className="display-5 bricolage-grotesque">Featured Vibes</h2>
-            <p className="lead mulish">Sample the energy</p>
+            <h2 className="display-5 bricolage-grotesque fw-bold">
+              Featured Tracks
+            </h2>
+            <p className="lead mulish text-muted">Experience the magic</p>
           </div>
+
           <div className="row g-4">
             {featuredTracks.map((track) => (
               <div key={track.id} className="col-lg-4 col-md-6">
@@ -107,59 +121,117 @@ const Home = () => {
         </div>
       </section>
 
-      {/* About Preview */}
-      <section
-        className="py-5 about-section text-white"
-        style={{ position: "relative" }}
-      >
+      {/* EXPERIENCE SECTION */}
+      <section className="py-5 text-white" style={{ background: "#0f172a" }}>
         <div className="container">
-          <div className="row align-items-center g-4">
-            <div className="col-lg-6 mb-4">
-              <div className="rounded-4 overflow-hidden shadow-lg">
-                <img
-                  src="https://images.unsplash.com/photo-1426604835664-9d3b2df42b2b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                  alt="SE'OULA"
-                  className="img-fluid about-image"
-                  style={{ borderRadius: "30px" }}
-                />
+          <h2 className="text-center display-6 bricolage-grotesque mb-4">
+            The SE'OULA Experience
+          </h2>
+          <p className="text-center mulish text-light mb-5">
+            Crafted for lovers of soul, rhythm, heritage, and sound.
+          </p>
+
+          <div className="row g-4">
+            <div className="col-md-4">
+              <div
+                className="p-4 rounded-4 shadow"
+                style={{ background: "rgba(255,255,255,0.05)" }}
+              >
+                <FaMusic size={40} className="mb-3 text-warning" />
+                <h4 className="bricolage-grotesque">Timeless Jazz</h4>
+                <p className="mulish text-light">
+                  A curated selection of authentic jazz rhythms with a modern
+                  twist.
+                </p>
               </div>
             </div>
+
+            <div className="col-md-4">
+              <div
+                className="p-4 rounded-4 shadow"
+                style={{ background: "rgba(255,255,255,0.05)" }}
+              >
+                <FaHeadphones size={40} className="mb-3 text-warning" />
+                <h4 className="bricolage-grotesque">Immersive Sound</h4>
+                <p className="mulish text-light">
+                  High–quality audio designed to pull you deeper into the
+                  rhythm.
+                </p>
+              </div>
+            </div>
+
+            <div className="col-md-4">
+              <div
+                className="p-4 rounded-4 shadow"
+                style={{ background: "rgba(255,255,255,0.05)" }}
+              >
+                <FaArrowRight size={40} className="mb-3 text-warning" />
+                <h4 className="bricolage-grotesque">A Modern Journey</h4>
+                <p className="mulish text-light">
+                  Experience jazz in a way that's elegant, bold, and
+                  unforgettable.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ABOUT PREVIEW */}
+      <section className="py-5 text-white" style={{ background: "#1e1b4b" }}>
+        <div className="container">
+          <div className="row align-items-center g-4">
             <div className="col-lg-6">
-              <h2 className="bricolage-grotesque mb-4">The Jazz Odyssey</h2>
-              <p className="lead mulish mb-4">
-                SE'OULA channels the electric pulse of jazz into modern
-                masterpieces, blending tradition with bold innovation.
+              <img
+                src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4"
+                alt="artist"
+                className="img-fluid rounded-4 shadow-lg"
+              />
+            </div>
+
+            <div className="col-lg-6">
+              <h2 className="bricolage-grotesque fw-bold mb-3">
+                Meet the Sound
+              </h2>
+              <p className="mulish mb-4 fs-5 text-light">
+                SE'OULA blends timeless heritage with bold artistic evolution.
+                Every melody tells a story—every rhythm breathes emotion.
               </p>
-              <p className="mulish mb-4">
-                From smoky clubs to global stages, discover a sound that's
-                alive, vibrant, and utterly immersive.
-              </p>
-              <Link to="/about" className="btn custom-btn mt-3">
-                Explore More <FaArrowRight className="ms-2" />
+
+              <Link to="/about" className="btn custom-btn">
+                Learn More <FaArrowRight className="ms-2" />
               </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Call to Action / Newsletter */}
+      {/* NEWSLETTER */}
       <section
-        className="py-5 text-center"
-        style={{ background: "var(--primary-color)" }}
+        className="py-5 text-center text-white"
+        style={{ background: "#312e81" }}
       >
-        <div className="container text-white">
-          <h3 className="bricolage-grotesque mb-3">Stay in the Groove</h3>
+        <div className="container">
+          <h3 className="bricolage-grotesque mb-3">
+            Stay Connected with SE'OULA
+          </h3>
           <p className="mulish mb-4">
-            Subscribe to SE'OULA updates, new tracks, and live events.
+            Get new releases, updates, and exclusive content straight to your
+            inbox.
           </p>
+
           <div className="d-flex justify-content-center gap-2 flex-wrap">
             <input
               type="email"
+              placeholder="Enter your email"
               className="form-control w-auto"
-              placeholder="Your email"
-              style={{ borderRadius: "50px", maxWidth: "300px" }}
+              style={{
+                borderRadius: "40px",
+                padding: "10px 20px",
+                maxWidth: "300px",
+              }}
             />
-            <button className="btn custom-btn px-4">Subscribe</button>
+            <button className="btn custom-btn px-4">Join Now</button>
           </div>
         </div>
       </section>
